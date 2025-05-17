@@ -1,0 +1,16 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+
+exporters:
+  clickhouse:
+    endpoint: tcp://clickhouse:9000
+    database: logs
+    logs_table_name: fastapi_logs
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [clickhouse]

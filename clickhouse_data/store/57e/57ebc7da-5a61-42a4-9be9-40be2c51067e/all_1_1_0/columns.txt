@@ -1,0 +1,6 @@
+columns format version: 1
+4 columns:
+`timestamp` DateTime
+`severity` String
+`body` String
+`attributes` Map(String, String)
